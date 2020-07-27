@@ -1,0 +1,132 @@
+﻿@model IEnumerable<NabzeArz.Models.Nerkh.CurrencyRate>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+            #sortable li {
+                margin: 0 3px 3px 3px;
+                padding: 0.4em;
+                padding-left: 1.5em;
+                font-size: 1.4em;
+                height: 18px;
+            }
+
+                #sortable li span {
+                    position: absolute;
+                    margin-left: -1.3em;
+                }
+    </style>
+}
+
+<h2>مدیریت ارز فیات</h2>
+
+<p>
+    @Html.ActionLink("ایجاد ارز جدید", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.symbol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.max)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.changePercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.changePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.showIntoChannel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fa_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.en_name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="item-@item.symbol">
+            <td>
+                @Html.DisplayFor(modelItem => item.symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.min)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.max)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.current)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changePercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.showIntoChannel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fa_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.en_name)
+            </td>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.id }) |
+                @Html.ActionLink("جزئیات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $('tbody').sortable({
+            axis: 'y',
+            update: function (event, ui) {
+                debugger;
+                var data = $(this).sortable('serialize');
+
+                // POST to server using $.post or $.ajax
+                $.ajax({
+                    data: data,
+                    type: 'POST',
+                    url: '@Url.Action("ChangeOrder" , "Currency" , new { area = "Admin" })'
+                });
+            }
+        });
+    </script>
+
+}
+

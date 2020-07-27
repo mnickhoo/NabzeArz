@@ -1,0 +1,81 @@
+﻿@model IEnumerable<NabzeArz.Models.ticketModel>
+@{
+    ViewBag.Title = "DogeCoin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DogeCoin</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>عنوان</th>
+            <td>شماره</td>
+            <th>نام کاربری</th>
+            <th>وضعیت</th>
+            <th>آدرس کیف پول</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var ticket in Model)
+        {
+            
+            <tr>
+                <td>
+                    @ticket.title
+                </td>
+                <td>
+                    @ticket.user.phone
+                </td>
+                <td>
+                    @ticket.user.name
+                </td>
+                <td>
+                    @ticket.status
+                </td>
+                <td>
+                    @ticket.user.walletDogcoin
+                </td>
+                <td>
+                    @ticket.type
+                </td>
+                <td>
+                    @if (ticket.status != "1")
+                    {
+                        <button class="btn btn-success" id="btn-reward" data-user-id="@ticket.user_id" data-ticket-id="@ticket.id">
+                            انجام شد
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-default" id="btn-reward" disabled>
+                           دریافت شده
+                        </button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("button#btn-reward").click(function() {
+                debugger;
+                var userId = $(this).attr("data-user-id");
+                var ticketId = $(this).attr("data-ticket-id");
+                //send a post request to action ticket
+                let url = `/Admin/Ticket/DogeCoinRecieved?userId=${userId}&ticketId=${ticketId}`; 
+                $.post(url, function (dataR) {
+                    alert(dataR.Message);
+                })
+            });
+        })
+    </script>
+    }
+
+
+

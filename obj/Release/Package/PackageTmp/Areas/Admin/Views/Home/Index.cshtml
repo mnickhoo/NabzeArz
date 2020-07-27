@@ -1,0 +1,78 @@
+﻿@model  NabzeArz.Areas.Admin.Models.ViewModels.DashboardViewModel
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">مدیریت ربات</div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="@Url.Action("Send" , "Message" , new { area = "Admin" })">ارسال پیام</a></li>
+                            <li class="list-group-item"><a href="@Url.Action("index" , "Ticket" , new {area = "Admin" })">تیکت ها</a></li>
+                            <li class="list-group-item"><a href="@Url.Action("DogeCoin" , "Ticket" , new {area = "Admin" })">دریافت دوج کوین</a></li>
+                            <li class="list-group-item"><a href="@Url.Action("DogeCoin" , "Ticket" , new {area = "Admin" })">آمار لحظه ای</a></li>
+                            <li class="list-group-item"><a href="@Url.Action("index" , "Currency" , new {area = "Admin" })">مدیریت ارز فیات</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">کاربران</div>
+                            <div class="panel-body text-center">
+                                @Model.totalUsers
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">درخواست های امروز</div>
+                            <div class="panel-body text-center">
+                                @Model.totalTrackingTodayCount
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">کل درخواست تا این لحظه</div>
+                            <div class="panel-body text-center">
+                                @Model.totalTrackingCount
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">وضعیت سیستم</div>
+                        <div class="panel-body text-center">
+                            وضعیت :<span class="text-success">فعال</span> 
+                            <button class="btn btn-danger">غیر فعال شود</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

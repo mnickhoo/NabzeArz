@@ -1,0 +1,1419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54CB5460-FE45-4BDE-A3FB-44F4A30C382B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NabzeArz</RootNamespace>
+    <AssemblyName>NabzeArz</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="NewConnection1-Deployment" Order="1" Enabled="True">
+          <Destination Path="" />
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.0.0\lib\net452\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telegram.Bot, Version=13.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.13.4.0\lib\net45\Telegram.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSetting.cs" />
+    <Compile Include="App_GlobalResources\Fa_IR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fa_IR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\IdntityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CurrencyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Admin\Models\MessageViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\DashboardViewModel.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BotController.cs" />
+    <Compile Include="Controllers\V1Controller.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\StatesController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CalculateProcess.cs" />
+    <Compile Include="Helper\PersianHelper.cs" />
+    <Compile Include="Hubs\StatesHub.cs" />
+    <Compile Include="Migrations\201804101926282_init.cs" />
+    <Compile Include="Migrations\201804101926282_init.Designer.cs">
+      <DependentUpon>201804101926282_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804150845180_newChange.cs" />
+    <Compile Include="Migrations\201804150845180_newChange.Designer.cs">
+      <DependentUpon>201804150845180_newChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AbstractAPI.cs" />
+    <Compile Include="Models\API\CryptoType.cs" />
+    <Compile Include="Models\API\ICryptoType.cs" />
+    <Compile Include="Models\API\ResponseModel.cs" />
+    <Compile Include="Models\ContextModels\CryptoRate.cs" />
+    <Compile Include="Models\ViewModels\AccountViewModels.cs" />
+    <Compile Include="Models\ViewModels\AdminViewModel.cs" />
+    <Compile Include="Models\AffiliateModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CoinApiModels\Ask.cs" />
+    <Compile Include="Models\CoinApiModels\Asset.cs" />
+    <Compile Include="Models\CoinApiModels\Bid.cs" />
+    <Compile Include="Models\CoinApiModels\Entities.cs" />
+    <Compile Include="Models\CoinApiModels\Exchange.cs" />
+    <Compile Include="Models\CoinApiModels\ExchangeCurrentrate.cs" />
+    <Compile Include="Models\CoinApiModels\Exchangerate.cs" />
+    <Compile Include="Models\CoinApiModels\Hashtag.cs" />
+    <Compile Include="Models\CoinApiModels\OHLCV.cs" />
+    <Compile Include="Models\CoinApiModels\Orderbook.cs" />
+    <Compile Include="Models\CoinApiModels\Period.cs" />
+    <Compile Include="Models\CoinApiModels\Quote.cs" />
+    <Compile Include="Models\CoinApiModels\Rate.cs" />
+    <Compile Include="Models\CoinApiModels\Symbol.cs" />
+    <Compile Include="Models\CoinApiModels\Trade.cs" />
+    <Compile Include="Models\CoinApiModels\Twitter.cs" />
+    <Compile Include="Models\CoinApiModels\Url.cs" />
+    <Compile Include="Models\CoinApiModels\User.cs" />
+    <Compile Include="Models\CoinApiModels\User_Mentions.cs" />
+    <Compile Include="Models\CoinMarketCap\CoinMarket.cs" />
+    <Compile Include="Models\ContextModels\CurrencyModel.cs" />
+    <Compile Include="Models\Enum\NabzEnum.cs" />
+    <Compile Include="Models\Nerkh\CurrencyRate.cs" />
+    <Compile Include="Models\ContextModels\IdentityModels.cs" />
+    <Compile Include="Models\Schadule\ISchedule.cs" />
+    <Compile Include="Models\ContextModels\ChannelModel.cs" />
+    <Compile Include="Models\ViewModels\ManageViewModels.cs" />
+    <Compile Include="Models\Nerkh\GoldRate.cs" />
+    <Compile Include="Models\Nerkh\INerkhRate.cs" />
+    <Compile Include="Models\Nerkh\NerkhCurrencyModel.cs" />
+    <Compile Include="Models\Nerkh\NerkhGoldModel.cs" />
+    <Compile Include="Models\Nerkh\NerkhObject.cs" />
+    <Compile Include="Models\Nerkh\NerkhResponseModel.cs" />
+    <Compile Include="Models\ContextModels\PointModel.cs" />
+    <Compile Include="Models\ContextModels\possensionModel.cs" />
+    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\Schadule\Schedule.cs" />
+    <Compile Include="Models\PublishString.cs" />
+    <Compile Include="Models\StatusModel.cs" />
+    <Compile Include="Models\ticketModel.cs" />
+    <Compile Include="Models\ContextModels\TrackingModel.cs" />
+    <Compile Include="Models\TGJU\USDAPIModel.cs" />
+    <Compile Include="Models\ContextModels\UserModel.cs" />
+    <Compile Include="Models\WidgetModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AssetService.cs" />
+    <Compile Include="Service\ChartService.cs" />
+    <Compile Include="Service\CoinApiService.cs" />
+    <Compile Include="Service\CoinMarketAPISerivce.cs" />
+    <Compile Include="Service\CurrencyService.cs" />
+    <Compile Include="Service\FileService.cs" />
+    <Compile Include="Service\NerkhAPIService.cs" />
+    <Compile Include="Service\PointService.cs" />
+    <Compile Include="Service\PossensionService.cs" />
+    <Compile Include="Service\SearchService.cs" />
+    <Compile Include="Service\state\StateService.cs" />
+    <Compile Include="Service\TelegramService.cs" />
+    <Compile Include="Service\TgjuAPIService.cs" />
+    <Compile Include="Service\TicketService.cs" />
+    <Compile Include="Service\TrackingService.cs" />
+    <Compile Include="Service\twitterService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\ValidationService.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\Send.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\styles\bootstrap-rtl.min.css" />
+    <Content Include="Content\styles\bootstrap-theme.css" />
+    <Content Include="Content\styles\bootstrap-theme.min.css" />
+    <Content Include="Content\styles\bootstrap.css" />
+    <Content Include="Content\styles\bootstrap.min.css" />
+    <Content Include="Content\styles\counter.css" />
+    <Content Include="Content\icon\act.png" />
+    <Content Include="Content\icon\ada.png" />
+    <Content Include="Content\icon\adx.png" />
+    <Content Include="Content\icon\ae.png" />
+    <Content Include="Content\icon\aion.png" />
+    <Content Include="Content\icon\amp.png" />
+    <Content Include="Content\icon\ant.png" />
+    <Content Include="Content\icon\ardr.png" />
+    <Content Include="Content\icon\ark.png" />
+    <Content Include="Content\icon\atm.png" />
+    <Content Include="Content\icon\bat.png" />
+    <Content Include="Content\icon\bay.png" />
+    <Content Include="Content\icon\bcc.png" />
+    <Content Include="Content\icon\bch.png" />
+    <Content Include="Content\icon\bcn.png" />
+    <Content Include="Content\icon\bdl.png" />
+    <Content Include="Content\icon\bela.png" />
+    <Content Include="Content\icon\blcn.png" />
+    <Content Include="Content\icon\blk.png" />
+    <Content Include="Content\icon\block.png" />
+    <Content Include="Content\icon\bnb.png" />
+    <Content Include="Content\icon\bnt.png" />
+    <Content Include="Content\icon\bq.png" />
+    <Content Include="Content\icon\bqx.png" />
+    <Content Include="Content\icon\btc.png" />
+    <Content Include="Content\icon\btcd.png" />
+    <Content Include="Content\icon\btcz.png" />
+    <Content Include="Content\icon\btg.png" />
+    <Content Include="Content\icon\btm.png" />
+    <Content Include="Content\icon\bts.png" />
+    <Content Include="Content\icon\btx.png" />
+    <Content Include="Content\icon\burst.png" />
+    <Content Include="Content\icon\clam.png" />
+    <Content Include="Content\icon\cnd.png" />
+    <Content Include="Content\icon\cnx.png" />
+    <Content Include="Content\icon\cny.png" />
+    <Content Include="Content\icon\cvc.png" />
+    <Content Include="Content\icon\dash.png" />
+    <Content Include="Content\icon\data.png" />
+    <Content Include="Content\icon\dbc.png" />
+    <Content Include="Content\icon\dcn.png" />
+    <Content Include="Content\icon\dcr.png" />
+    <Content Include="Content\icon\dent.png" />
+    <Content Include="Content\icon\dgb.png" />
+    <Content Include="Content\icon\dgd.png" />
+    <Content Include="Content\icon\doge.png" />
+    <Content Include="Content\icon\drgn.png" />
+    <Content Include="Content\icon\edg.png" />
+    <Content Include="Content\icon\edoge.png" />
+    <Content Include="Content\icon\elf.png" />
+    <Content Include="Content\icon\ella.png" />
+    <Content Include="Content\icon\emc.png" />
+    <Content Include="Content\icon\emc2.png" />
+    <Content Include="Content\icon\eng.png" />
+    <Content Include="Content\icon\eos.png" />
+    <Content Include="Content\icon\etc.png" />
+    <Content Include="Content\icon\eth.png" />
+    <Content Include="Content\icon\ethos.png" />
+    <Content Include="Content\icon\etn.png" />
+    <Content Include="Content\icon\etp.png" />
+    <Content Include="Content\icon\eur.png" />
+    <Content Include="Content\icon\evx.png" />
+    <Content Include="Content\icon\exmo.png" />
+    <Content Include="Content\icon\exp.png" />
+    <Content Include="Content\icon\fair.png" />
+    <Content Include="Content\icon\fct.png" />
+    <Content Include="Content\icon\fil.png" />
+    <Content Include="Content\icon\fldc.png" />
+    <Content Include="Content\icon\flo.png" />
+    <Content Include="Content\icon\fun.png" />
+    <Content Include="Content\icon\game.png" />
+    <Content Include="Content\icon\gas.png" />
+    <Content Include="Content\icon\gbp.png" />
+    <Content Include="Content\icon\gbx.png" />
+    <Content Include="Content\icon\gbyte.png" />
+    <Content Include="Content\icon\gno.png" />
+    <Content Include="Content\icon\gnt.png" />
+    <Content Include="Content\icon\grc.png" />
+    <Content Include="Content\icon\grs.png" />
+    <Content Include="Content\icon\gup.png" />
+    <Content Include="Content\icon\gxs.png" />
+    <Content Include="Content\icon\hsr.png" />
+    <Content Include="Content\icon\huc.png" />
+    <Content Include="Content\icon\hush.png" />
+    <Content Include="Content\icon\icn.png" />
+    <Content Include="Content\icon\icx.png" />
+    <Content Include="Content\icon\jpy.png" />
+    <Content Include="Content\icon\kcs.png" />
+    <Content Include="Content\icon\kin.png" />
+    <Content Include="Content\icon\kmd.png" />
+    <Content Include="Content\icon\knc.png" />
+    <Content Include="Content\icon\krb.png" />
+    <Content Include="Content\icon\lbc.png" />
+    <Content Include="Content\icon\link.png" />
+    <Content Include="Content\icon\lkk.png" />
+    <Content Include="Content\icon\lrc.png" />
+    <Content Include="Content\icon\lsk.png" />
+    <Content Include="Content\icon\ltc.png" />
+    <Content Include="Content\icon\maid.png" />
+    <Content Include="Content\icon\mana.png" />
+    <Content Include="Content\icon\mcap.png" />
+    <Content Include="Content\icon\mco.png" />
+    <Content Include="Content\icon\med.png" />
+    <Content Include="Content\icon\miota.png" />
+    <Content Include="Content\icon\mkr.png" />
+    <Content Include="Content\icon\mln.png" />
+    <Content Include="Content\icon\mnx.png" />
+    <Content Include="Content\icon\mona.png" />
+    <Content Include="Content\icon\mtl.png" />
+    <Content Include="Content\icon\music.png" />
+    <Content Include="Content\icon\nas.png" />
+    <Content Include="Content\icon\nav.png" />
+    <Content Include="Content\icon\ndz.png" />
+    <Content Include="Content\icon\nebl.png" />
+    <Content Include="Content\icon\neo.png" />
+    <Content Include="Content\icon\neos.png" />
+    <Content Include="Content\icon\nlc2.png" />
+    <Content Include="Content\icon\nlg.png" />
+    <Content Include="Content\icon\nmc.png" />
+    <Content Include="Content\icon\nxs.png" />
+    <Content Include="Content\icon\nxt.png" />
+    <Content Include="Content\icon\omg.png" />
+    <Content Include="Content\icon\omni.png" />
+    <Content Include="Content\icon\pac.png" />
+    <Content Include="Content\icon\part.png" />
+    <Content Include="Content\icon\pasl.png" />
+    <Content Include="Content\icon\pay.png" />
+    <Content Include="Content\icon\pink.png" />
+    <Content Include="Content\icon\pirl.png" />
+    <Content Include="Content\icon\pivx.png" />
+    <Content Include="Content\icon\poe.png" />
+    <Content Include="Content\icon\pot.png" />
+    <Content Include="Content\icon\powr.png" />
+    <Content Include="Content\icon\ppc.png" />
+    <Content Include="Content\icon\ppt.png" />
+    <Content Include="Content\icon\pura.png" />
+    <Content Include="Content\icon\qash.png" />
+    <Content Include="Content\icon\qiwi.png" />
+    <Content Include="Content\icon\qsp.png" />
+    <Content Include="Content\icon\qtum.png" />
+    <Content Include="Content\icon\rads.png" />
+    <Content Include="Content\icon\rcn.png" />
+    <Content Include="Content\icon\rdd.png" />
+    <Content Include="Content\icon\rdn.png" />
+    <Content Include="Content\icon\rep.png" />
+    <Content Include="Content\icon\req.png" />
+    <Content Include="Content\icon\rhoc.png" />
+    <Content Include="Content\icon\ric.png" />
+    <Content Include="Content\icon\rise.png" />
+    <Content Include="Content\icon\rlc.png" />
+    <Content Include="Content\icon\rub.png" />
+    <Content Include="Content\icon\salt.png" />
+    <Content Include="Content\icon\san.png" />
+    <Content Include="Content\icon\sbd.png" />
+    <Content Include="Content\icon\sberbank.png" />
+    <Content Include="Content\icon\sc.png" />
+    <Content Include="Content\icon\sky.png" />
+    <Content Include="Content\icon\smart.png" />
+    <Content Include="Content\icon\sngls.png" />
+    <Content Include="Content\icon\snt.png" />
+    <Content Include="Content\icon\start.png" />
+    <Content Include="Content\icon\steem.png" />
+    <Content Include="Content\icon\storj.png" />
+    <Content Include="Content\icon\storm.png" />
+    <Content Include="Content\icon\strat.png" />
+    <Content Include="Content\icon\sub.png" />
+    <Content Include="Content\icon\sys.png" />
+    <Content Include="Content\icon\taas.png" />
+    <Content Include="Content\icon\tkn.png" />
+    <Content Include="Content\icon\trx.png" />
+    <Content Include="Content\icon\tzc.png" />
+    <Content Include="Content\icon\ubq.png" />
+    <Content Include="Content\icon\usd.png" />
+    <Content Include="Content\icon\usdt.png" />
+    <Content Include="Content\icon\ven.png" />
+    <Content Include="Content\icon\veri.png" />
+    <Content Include="Content\icon\via.png" />
+    <Content Include="Content\icon\vivo.png" />
+    <Content Include="Content\icon\vrc.png" />
+    <Content Include="Content\icon\vtc.png" />
+    <Content Include="Content\icon\waves.png" />
+    <Content Include="Content\icon\wax.png" />
+    <Content Include="Content\icon\wtc.png" />
+    <Content Include="Content\icon\xbc.png" />
+    <Content Include="Content\icon\xcp.png" />
+    <Content Include="Content\icon\xdn.png" />
+    <Content Include="Content\icon\xem.png" />
+    <Content Include="Content\icon\xlm.png" />
+    <Content Include="Content\icon\xmg.png" />
+    <Content Include="Content\icon\xmr.png" />
+    <Content Include="Content\icon\xp.png" />
+    <Content Include="Content\icon\xpm.png" />
+    <Content Include="Content\icon\xrb.png" />
+    <Content Include="Content\icon\xrp.png" />
+    <Content Include="Content\icon\xtz.png" />
+    <Content Include="Content\icon\xuc.png" />
+    <Content Include="Content\icon\xvc.png" />
+    <Content Include="Content\icon\xvg.png" />
+    <Content Include="Content\icon\xzc.png" />
+    <Content Include="Content\icon\zcl.png" />
+    <Content Include="Content\icon\zec.png" />
+    <Content Include="Content\icon\zen.png" />
+    <Content Include="Content\icon\zrx.png" />
+    <Content Include="Content\styles\Site.css" />
+    <Content Include="example.html" />
+    <Content Include="favicon.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\IRANSans\css\fontiran.css" />
+    <Content Include="fonts\IRANSans\css\style.css" />
+    <Content Include="fonts\IRANSans\IRANSans.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\background.png" />
+    <Content Include="Images\logo.svg" />
+    <Content Include="Scripts\animationCounter.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="json\CoinMarket.json" />
+    <Content Include="json\Tgju.json" />
+    <Content Include="Areas\Admin\Views\Ticket\DogeCoin.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Currency\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Currency\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Currency\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Currency\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Currency\Index.cshtml" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb.eot" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb_Black.eot" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb_Bold.eot" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb_Light.eot" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb_Medium.eot" />
+    <Content Include="fonts\IRANSans\fonts\eot\IRANSansWeb_UltraLight.eot" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb.ttf" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb_Black.ttf" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb_Bold.ttf" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb_Light.ttf" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb_Medium.ttf" />
+    <Content Include="fonts\IRANSans\fonts\ttf\IRANSansWeb_UltraLight.ttf" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb_Black.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb_Bold.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb_Light.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb_Medium.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff2\IRANSansWeb_UltraLight.woff2" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb.woff" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb_Black.woff" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb_Bold.woff" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb_Light.woff" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb_Medium.woff" />
+    <Content Include="fonts\IRANSans\fonts\woff\IRANSansWeb_UltraLight.woff" />
+    <Content Include="Content\styles\bootstrap-rtl.css.map" />
+    <Content Include="Content\styles\bootstrap-theme.css.map" />
+    <Content Include="Content\styles\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ProductionServer.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\Chart.js-2.7.1\.gitignore" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\style.css" />
+    <Content Include="Scripts\Chart.js-2.7.1\gulpfile.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\karma.conf.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\advanced\data-labelling.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\advanced\progress-bar.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\area\analyser.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\area\line-boundaries.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\area\line-datasets.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\area\line-stacked.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\area\radar.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bar\horizontal.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bar\multi-axis.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bar\stacked-group.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bar\stacked.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bar\vertical.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\bubble.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\combo-bar-line.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\doughnut.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\basic.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\interpolation-modes.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\line-styles.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\multi-axis.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\point-sizes.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\point-styles.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\skip-points.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\line\stepped.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\pie.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\polar-area.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\radar-skip-points.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\radar.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\scatter\basic.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\charts\scatter\multi-axis.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\favicon.ico" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\index.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\legend\point-style.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\legend\positioning.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\logo.svg" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\samples.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\filtering-labels.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\gridlines-display.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\gridlines-style.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\linear\min-max-suggested.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\linear\min-max.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\linear\step-size.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\logarithmic\line.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\logarithmic\scatter.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\multiline-labels.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\non-numeric-y.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\time\combo.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\time\financial.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\time\line-point-data.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scales\time\line.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\scriptable\bubble.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\style.css" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\border.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\callbacks.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\custom-line.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\custom-pie.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\custom-points.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\interactions.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\tooltips\positioning.html" />
+    <Content Include="Scripts\Chart.js-2.7.1\samples\utils.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\chart.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Bar.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Bubble.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Doughnut.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Line.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.PolarArea.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Radar.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\charts\Chart.Scatter.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.bar.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.bubble.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.doughnut.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.line.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.polarArea.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.radar.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\controllers\controller.scatter.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.animation.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.controller.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.datasetController.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.defaults.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.element.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.helpers.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.interaction.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.layoutService.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.plugin.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.scale.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.scaleService.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.ticks.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\core\core.tooltip.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\elements\element.arc.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\elements\element.line.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\elements\element.point.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\elements\element.rectangle.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\elements\index.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\helpers\helpers.canvas.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\helpers\helpers.core.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\helpers\helpers.easing.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\helpers\helpers.options.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\helpers\index.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\platforms\platform.basic.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\platforms\platform.dom.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\platforms\platform.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\plugins\plugin.filler.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\plugins\plugin.legend.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\plugins\plugin.title.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.category.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.linear.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.linearbase.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.logarithmic.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.radialLinear.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\src\scales\scale.time.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\core.scale\label-offset-vertical-axes.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-end-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-end.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-start-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-start.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-spline-span.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-spline.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-radar-boundary-origin.png" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\jasmine.context.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\jasmine.index.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\jasmine.matchers.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\jasmine.utils.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.bar.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.bubble.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.doughnut.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.line.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.polarArea.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\controller.radar.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.controller.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.datasetController.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.element.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.helpers.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.interaction.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.layoutService.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.plugin.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.scale.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.scaleService.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\core.tooltip.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\element.arc.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\element.line.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\element.point.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\element.rectangle.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\global.defaults.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\global.deprecations.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\helpers.canvas.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\helpers.core.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\helpers.easing.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\helpers.options.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\platform.dom.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\plugin.filler.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\plugin.legend.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\plugin.title.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\scale.category.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\scale.linear.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\scale.logarithmic.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\scale.radialLinear.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\specs\scale.time.tests.js" />
+    <Content Include="Scripts\Chart.js-2.7.1\.codeclimate.yml" />
+    <Content Include="Scripts\Chart.js-2.7.1\.editorconfig" />
+    <Content Include="Scripts\Chart.js-2.7.1\.eslintignore" />
+    <Content Include="Scripts\Chart.js-2.7.1\.eslintrc" />
+    <Content Include="Scripts\Chart.js-2.7.1\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\.npmignore" />
+    <Content Include="Scripts\Chart.js-2.7.1\.travis.yml" />
+    <Content Include="Scripts\Chart.js-2.7.1\book.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\composer.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\cartesian\category.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\cartesian\linear.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\cartesian\logarithmic.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\cartesian\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\cartesian\time.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\labelling.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\radial\linear.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\radial\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\axes\styling.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\area.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\bar.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\bubble.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\doughnut.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\line.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\mixed.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\polar.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\radar.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\charts\scatter.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\animations.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\elements.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\layout.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\legend.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\title.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\configuration\tooltip.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\api.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\axes.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\charts.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\contributing.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\plugins.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\developers\updates.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\colors.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\device-pixel-ratio.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\fonts.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\interactions\events.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\interactions\modes.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\interactions\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\options.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\general\responsive.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\getting-started\installation.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\getting-started\integration.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\getting-started\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\getting-started\usage.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\notes\comparison.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\notes\extensions.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\notes\license.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\notes\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\docs\SUMMARY.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\LICENSE.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\MAINTAINING.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\package.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\README.md" />
+    <Content Include="Scripts\Chart.js-2.7.1\scripts\deploy.sh" />
+    <Content Include="Scripts\Chart.js-2.7.1\scripts\release.sh" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\.eslintrc" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\core.scale\label-offset-vertical-axes.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-end-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-end.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-origin.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-start-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-boundary-start.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-spline-span.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset-spline.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-line-dataset.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.json" />
+    <Content Include="Scripts\Chart.js-2.7.1\test\fixtures\plugin.filler\fill-radar-boundary-origin.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\demo\index.html" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\dist\jquery.viewportchecker.min.js" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\Gruntfile.js" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\src\jquery.viewportchecker.js" />
+    <Content Include="themplate\bower_components\jquery\AUTHORS.txt" />
+    <Content Include="themplate\bower_components\jquery\dist\core.js" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.js" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.slim.js" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.slim.min.js" />
+    <Content Include="themplate\bower_components\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="themplate\bower_components\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="themplate\bower_components\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="themplate\bower_components\jquery\LICENSE.txt" />
+    <Content Include="themplate\bower_components\jquery\src\ajax.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\var\location.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="themplate\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="themplate\bower_components\jquery\src\callbacks.js" />
+    <Content Include="themplate\bower_components\jquery\src\core.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\access.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\DOMEval.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\init.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\ready.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\readyException.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="themplate\bower_components\jquery\src\css.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\adjustCSS.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\showHide.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="themplate\bower_components\jquery\src\css\var\swap.js" />
+    <Content Include="themplate\bower_components\jquery\src\data.js" />
+    <Content Include="themplate\bower_components\jquery\src\data\Data.js" />
+    <Content Include="themplate\bower_components\jquery\src\data\var\acceptData.js" />
+    <Content Include="themplate\bower_components\jquery\src\data\var\dataPriv.js" />
+    <Content Include="themplate\bower_components\jquery\src\data\var\dataUser.js" />
+    <Content Include="themplate\bower_components\jquery\src\deferred.js" />
+    <Content Include="themplate\bower_components\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="themplate\bower_components\jquery\src\deprecated.js" />
+    <Content Include="themplate\bower_components\jquery\src\dimensions.js" />
+    <Content Include="themplate\bower_components\jquery\src\effects.js" />
+    <Content Include="themplate\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="themplate\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="themplate\bower_components\jquery\src\event.js" />
+    <Content Include="themplate\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="themplate\bower_components\jquery\src\event\alias.js" />
+    <Content Include="themplate\bower_components\jquery\src\event\focusin.js" />
+    <Content Include="themplate\bower_components\jquery\src\event\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\event\trigger.js" />
+    <Content Include="themplate\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="themplate\bower_components\jquery\src\exports\global.js" />
+    <Content Include="themplate\bower_components\jquery\src\jquery.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\getAll.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="themplate\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="themplate\bower_components\jquery\src\offset.js" />
+    <Content Include="themplate\bower_components\jquery\src\queue.js" />
+    <Content Include="themplate\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="themplate\bower_components\jquery\src\selector-native.js" />
+    <Content Include="themplate\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="themplate\bower_components\jquery\src\selector.js" />
+    <Content Include="themplate\bower_components\jquery\src\serialize.js" />
+    <Content Include="themplate\bower_components\jquery\src\traversing.js" />
+    <Content Include="themplate\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="themplate\bower_components\jquery\src\traversing\var\dir.js" />
+    <Content Include="themplate\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="themplate\bower_components\jquery\src\traversing\var\siblings.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\arr.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\concat.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\document.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\documentElement.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\fnToString.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\getProto.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\push.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\rcssNum.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\rnotwhite.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\slice.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\support.js" />
+    <Content Include="themplate\bower_components\jquery\src\var\toString.js" />
+    <Content Include="themplate\bower_components\jquery\src\wrap.js" />
+    <Content Include="themplate\bower_components\parallax.js\parallax.js" />
+    <Content Include="themplate\bower_components\parallax.js\parallax.min.js" />
+    <Content Include="themplate\css\addition.css" />
+    <Content Include="themplate\css\fonts.min.css" />
+    <Content Include="themplate\css\nabzeArz.css" />
+    <Content Include="themplate\css\main.min.css" />
+    <Content Include="themplate\fonts\fontello\fontello.svg" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\Farsi_numerals.png" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\MobileFonts.png" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\MonoSpaced Numral.png" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\css\fontiran.css" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\css\style.css" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\IRANSans.html" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\WebFonts.png" />
+    <Content Include="themplate\fonts\IranSans\IRANSans5.html" />
+    <Content Include="themplate\fonts\IranSans\IRANSans5.jpg" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\MobileFonts.png" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\MobileFonts.png" />
+    <Content Include="themplate\fonts\IranSans\Non_English\Non_English.png" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\css\fontiran.css" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\css\style.css" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\IRANSans.html" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\WebFonts.png" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\SmallSizeFonts.png" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\css\fontiran.css" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\css\style.css" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\IRANSans.html" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\WebFonts.png" />
+    <Content Include="themplate\img\bs.png" />
+    <Content Include="themplate\img\favicon\apple-touch-icon-114x114.png" />
+    <Content Include="themplate\img\favicon\apple-touch-icon-72x72.png" />
+    <Content Include="themplate\img\favicon\apple-touch-icon.png" />
+    <Content Include="themplate\img\favicon\favicon.ico" />
+    <Content Include="themplate\img\favicon\favicon.png" />
+    <Content Include="themplate\img\features\0.jpg" />
+    <Content Include="themplate\img\features\1.jpg" />
+    <Content Include="themplate\img\features\2.jpg" />
+    <Content Include="themplate\img\features\3.jpg" />
+    <Content Include="themplate\img\footerbg.jpg" />
+    <Content Include="themplate\img\footerbg1.jpg" />
+    <Content Include="themplate\img\github.png" />
+    <Content Include="themplate\img\group.png" />
+    <Content Include="themplate\img\habr.png" />
+    <Content Include="themplate\img\hackernews.png" />
+    <Content Include="themplate\img\header.png" />
+    <Content Include="themplate\img\headerbg.jpg" />
+    <Content Include="themplate\img\heart.svg" />
+    <Content Include="themplate\img\icon-handshake.png" />
+    <Content Include="themplate\img\icon-handshake.svg" />
+    <Content Include="themplate\img\icon-search.png" />
+    <Content Include="themplate\img\icon-search.svg" />
+    <Content Include="themplate\img\icon-users.png" />
+    <Content Include="themplate\img\icon-users.svg" />
+    <Content Include="themplate\img\new-header.png" />
+    <Content Include="themplate\img\og-image.jpg" />
+    <Content Include="themplate\img\people_waiting.svg" />
+    <Content Include="themplate\img\ph.png" />
+    <Content Include="themplate\img\phone.png" />
+    <Content Include="themplate\img\reddit.png" />
+    <Content Include="themplate\img\spark.png" />
+    <Content Include="themplate\img\statisticbg.jpg" />
+    <Content Include="themplate\img\telegram.svg" />
+    <Content Include="themplate\img\vc.png" />
+    <Content Include="themplate\index.html" />
+    <Content Include="themplate\js\common.js" />
+    <Content Include="themplate\js\libs.min.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\.bower.json" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\bower.json" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\dist\jquery.viewportchecker.min.js.map" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\LICENSE" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\package.json" />
+    <Content Include="themplate\bower_components\jQuery-viewport-checker\README.md" />
+    <Content Include="themplate\bower_components\jquery\.bower.json" />
+    <Content Include="themplate\bower_components\jquery\bower.json" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="themplate\bower_components\jquery\dist\jquery.slim.min.map" />
+    <Content Include="themplate\bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="themplate\bower_components\jquery\README.md" />
+    <Content Include="themplate\bower_components\jquery\src\.eslintrc" />
+    <Content Include="themplate\bower_components\parallax.js\.bower.json" />
+    <Content Include="themplate\bower_components\parallax.js\bower.json" />
+    <Content Include="themplate\bower_components\parallax.js\LICENSE" />
+    <Content Include="themplate\bower_components\parallax.js\README.md" />
+    <Content Include="themplate\CNAME" />
+    <Content Include="themplate\fonts\Copperplate\copperplate.ttf" />
+    <Content Include="themplate\fonts\fontello\fontello.eot" />
+    <Content Include="themplate\fonts\fontello\fontello.ttf" />
+    <Content Include="themplate\fonts\fontello\fontello.woff" />
+    <Content Include="themplate\fonts\fontello\fontello.woff2" />
+    <Content Include="themplate\fonts\Gillsans\GillSans.ttf" />
+    <Content Include="themplate\fonts\HelveticaBold\helvetica_bold.otf" />
+    <Content Include="themplate\fonts\Helvetica\helvetica.otf" />
+    <Content Include="themplate\fonts\RobotoBold\RobotoBold.eot" />
+    <Content Include="themplate\fonts\RobotoBold\RobotoBold.ttf" />
+    <Content Include="themplate\fonts\RobotoBold\RobotoBold.woff" />
+    <Content Include="themplate\fonts\RobotoRegular\RobotoRegular.eot" />
+    <Content Include="themplate\fonts\RobotoRegular\RobotoRegular.ttf" />
+    <Content Include="themplate\fonts\RobotoRegular\RobotoRegular.woff" />
+    <Content Include="themplate\LICENSE" />
+    <Content Include="themplate\NEWSITE.md" />
+    <Content Include="themplate\README.md" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\English to Farsi numbers help.pdf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\IRANSans%28FaNum%29_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MobileFonts\IRANSansMobile%28FaNum%29_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\IRANSansMonoSpacedNum_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\IRANSansOnlyNumeral.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\IRANSansOnlyNumeral_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\IRANSansOnlyNumeral_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\IRANSansOnlyNumeral_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\IRANSansOnlyNumral_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\woff\IRANSansOnlyNumeral.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\woff\IRANSansOnlyNumeral_Bold.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\woff\IRANSansOnlyNumeral_Light.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\woff\IRANSansOnlyNumeral_UltraLight.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\OnlyNumeral\woff\IRANSansOnlyNumral_Medium.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum_Black.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum_Bold.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum_Light.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum_Medium.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\MonoSpaced Numral\woff\IRANSansMonoSpacedNum_UltraLight.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29_Black.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29_Bold.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29_Light.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29_Medium.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\eot\IRANSansWeb%28FaNum%29_UltraLight.eot" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\ttf\IRANSansWeb%28FaNum%29_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29_Black.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29_Bold.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29_Light.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29_Medium.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff2\IRANSansWeb%28FaNum%29_UltraLight.woff2" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29_Black.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29_Bold.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29_Light.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29_Medium.woff" />
+    <Content Include="themplate\fonts\IranSans\Farsi_numerals\webFonts\fonts\woff\IRANSansWeb%28FaNum%29_UltraLight.woff" />
+    <Content Include="themplate\fonts\IranSans\IRANSans.ttf" />
+    <Content Include="themplate\fonts\IranSans\IRANSans_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\IRANSans_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\IRANSans_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\IRANSans_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\IRANSans_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\license.pdf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile.ttf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\MobileFonts\IRANSansMobile_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRAN SansMobile%28NoEn%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRANSansMobile%28NoEn%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRANSansMobile%28NoEn%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRANSansMobile%28NoEn%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRANSansMobile%28NoEn%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\MobileFonts\IRANSansMobile%28NoEn%29_ultralight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29_Black.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29_Bold.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29_Light.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29_Medium.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\eot\IRANSansWeb%28NoEn%29_UltraLight.eot" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\ttf\IRANSansWeb%28NoEn%29_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29_Black.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29_Bold.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29_Light.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29_Medium.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff2\IRANSansWeb%28NoEn%29_UltraLight.woff2" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29.woff" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29_Black.woff" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29_Bold.woff" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29_Light.woff" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29_Medium.woff" />
+    <Content Include="themplate\fonts\IranSans\Non_English\WebFonts\fonts\woff\IRANSansWeb%28NoEn%29_UltraLight.woff" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29.ttf" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\SmallSizeFonts\IRANSans%28Small%29_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb_Black.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb_Bold.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb_Light.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb_Medium.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\eot\IRANSansWeb_UltraLight.eot" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb_Black.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb_Bold.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb_Light.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb_Medium.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\ttf\IRANSansWeb_UltraLight.ttf" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb_Black.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb_Bold.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb_Light.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb_Medium.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff2\IRANSansWeb_UltraLight.woff2" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb.woff" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb_Black.woff" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb_Bold.woff" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb_Light.woff" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb_Medium.woff" />
+    <Content Include="themplate\fonts\IranSans\WebFonts\fonts\woff\IRANSansWeb_UltraLight.woff" />
+    <Content Include="Views\States\Index.cshtml" />
+    <Content Include="Views\Possension\Create.cshtml" />
+    <Content Include="Views\Possension\Delete.cshtml" />
+    <Content Include="Views\Possension\Details.cshtml" />
+    <Content Include="Views\Possension\Edit.cshtml" />
+    <Content Include="Views\Possension\Index.cshtml" />
+    <Content Include="Views\Currency\Create.cshtml" />
+    <Content Include="Views\Currency\Delete.cshtml" />
+    <Content Include="Views\Currency\Details.cshtml" />
+    <Content Include="Views\Currency\Edit.cshtml" />
+    <Content Include="Views\Currency\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\User\" />
+    <Folder Include="Chart\BTC\" />
+    <Folder Include="Content\log\" />
+    <Folder Include="Files\" />
+    <Folder Include="Scripts\Chart.js-2.7.1\dist\" />
+    <Folder Include="Views\Bot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Fa_IR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Fa_IR.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804101926282_init.resx">
+      <DependentUpon>201804101926282_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804150845180_newChange.resx">
+      <DependentUpon>201804150845180_newChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>43638</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:43638/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

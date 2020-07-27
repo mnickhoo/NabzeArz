@@ -1,0 +1,24 @@
+@font-face {
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/themplate/fonts/RobotoRegular/RobotoRegular.eot?#iefix) format("embedded-opentype"),url(/themplate/fonts/RobotoRegular/RobotoRegular.woff) format("woff"),url(/themplate/fonts/RobotoRegular/RobotoRegular.ttf) format("truetype")
+}
+@font-face {
+    font-family: copperplate;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/themplate/fonts/Copperplate/copperplate.ttf) format("truetype")
+}
+@font-face {
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/themplate/fonts/RobotoBold/RobotoBold.eot?#iefix) format("embedded-opentype"),url(/themplate/fonts/RobotoBold/RobotoBold.woff) format("woff"),url(/themplate/fonts/RobotoBold/RobotoBold.ttf) format("truetype")
+}
+@font-face {
+    font-family: gillsans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/themplate/fonts/Gillsans/GillSans.ttf) format("truetype")
+}

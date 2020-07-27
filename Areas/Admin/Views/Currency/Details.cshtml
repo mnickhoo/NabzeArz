@@ -1,0 +1,99 @@
+﻿@model NabzeArz.Models.Nerkh.CurrencyRate
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CurrencyRate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.max)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.max)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.current)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.current)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.changePercent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.changePercent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.changePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.changePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.showIntoChannel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.showIntoChannel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fa_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fa_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.en_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.en_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_list)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_list)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

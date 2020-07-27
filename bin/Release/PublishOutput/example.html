@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="/signalr/hubs"></script>
+</head>
+<body>
+    <div class="container">
+        <textarea id="message" cols="60" rows="5"></textarea>
+        <button id="send">send</button>
+
+        <ul id="listMessage"></ul>
+    </div>
+    <script>
+        $(function () {
+            notifications = $.connection.statesHub;
+
+
+            notifications.client.updateStudentInformation = function (serverResponse) {
+                alert('changes triggered by ' + serverResponse + ' operation');
+                getStudentInformation()
+
+            $.connection.hub.start().done(function () {
+                //alert($.connection.hub.id);
+                $("#send").click(function() {
+                    var message = $("#message").val();
+                    states.server.pushStates(message);
+                    $("#message").val("").focus();
+                })
+
+            });
+
+            states.client.getMessage = function (message) {
+                debugger;
+                var record = `<li> ${message} </li>`;
+                $("#listMessage").append(record);
+            }
+
+
+        });
+
+    </script>
+</body>
+</html>

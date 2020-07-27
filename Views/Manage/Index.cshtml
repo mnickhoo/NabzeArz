@@ -1,0 +1,75 @@
+﻿@model IdentitySample.Models.IndexViewModel
+@{
+    ViewBag.Title = "مدیریت حساب";
+}
+
+<h2>@ViewBag.Title.</h2>
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="row">
+    <div class="col-md-8">
+        <p>
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("تغییر پسورد", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Pick a password", "SetPassword")
+            }
+        </p>
+        <p>
+            شماره تماس: @(Model.PhoneNumber ?? "None") [
+            @if (Model.PhoneNumber != null)
+            {
+                @Html.ActionLink("تغییر", "AddPhoneNumber")
+                @: &nbsp;|&nbsp;
+                @Html.ActionLink("حذف", "RemovePhoneNumber")
+            }
+            else
+            {
+                @Html.ActionLink("افزودن", "AddPhoneNumber")
+            }
+            ]
+        </p>
+        <p>
+            External Logins: @Model.Logins.Count
+            @Html.ActionLink("[مدیریت]", "ManageLogins")
+        </p>
+        @if (Model.TwoFactor)
+        {
+            <form method="post" action="/Manage/DisableTFA">
+                <p>
+                    تایید دو مرحله ای فعال می باشد
+                    <input type="submit" value="غیر فعال" class="btn btn-default"/>
+                </p>
+            </form>
+        }
+        else
+        {
+            <form method="post" action="/Manage/EnableTFA">
+                <p>
+                    دو مرحله ای در حال حاضر غیر فعال است :
+                    <input type="submit" value="فعال" class="btn btn-default"/>
+                </p>
+            </form>
+        }
+        @if (Model.BrowserRemembered)
+        {
+            <form method="post" action="/Manage/ForgetBrowser">
+                <p>
+                    مرورگر تایید دو مرحله ای را به خاطر بسپارد
+                    <input type="submit" value="فراموشم کن" class="btn btn-default" />
+                </p>
+            </form>
+        }
+        else
+        {
+            <form method="post" action="/Manage/RememberBrowser">
+                <p>
+                    مرورگر تایید دو مرحله ای را به خاطر بسپارد نسپرده است
+                    <input type="submit" value="مرا به خاطر بسپار" class="btn btn-default"/>
+                </p>
+            </form>
+        }
+    </div>
+</div>
